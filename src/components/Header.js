@@ -19,21 +19,16 @@ class Header extends React.Component {
               </span>
             </li>
             <li className="nav-item active">
-              <span className="nav-link" data-testid="total-field">0</span>
+              <span className="nav-link" data-testid="total-field">
+                0
+              </span>
             </li>
             <li className="nav-item active">
-              <span className="nav-link" data-testid="header-currency-field">BRL</span>
+              <span className="nav-link" data-testid="header-currency-field">
+                BRL
+              </span>
             </li>
           </ul>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          />
         </div>
       </nav>
     );

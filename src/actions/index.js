@@ -4,9 +4,9 @@ import getCurrencie from '../services/currenciAPI';
 export const SET_EMAIL_VALUE = 'SET_EMAIL_VALUE';
 export const REQUEST_CURRENCIE_SUCESS = 'REQUEST_CURRENCIE_SUCESS';
 
-export const requestCurrencieSucess = (payload) => ({
+export const requestCurrencieSucess = (currencies) => ({
   type: REQUEST_CURRENCIE_SUCESS,
-  payload,
+  currencies,
 });
 
 export function fetchCurrencie() {

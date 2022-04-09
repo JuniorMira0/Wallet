@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
+import Inputs from '../components/Inputs';
 import { fetchCurrencie } from '../actions';
 
 class Wallet extends React.Component {
@@ -11,12 +12,10 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { expenses } = this.props;
-
     return (
       <div>
         <Header />
-        {`Despesas: ${expenses}`}
+        <Inputs />
       </div>
     );
   }
@@ -26,7 +25,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Wallet.propTypes = {
-  expenses: PropTypes.string.isRequired,
   getCurrencieValue: PropTypes.func.isRequired,
 };
 export default connect(null, mapDispatchToProps)(Wallet);

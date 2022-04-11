@@ -30,6 +30,7 @@ class Inputs extends React.Component {
     const { id, value, description, coin, method, tag } = this.state;
     e.preventDefault();
     const rates = await fetchAll();
+    console.log(rates);
     expensesArray({
       id,
       value,

@@ -1,5 +1,6 @@
+const url = 'https://economia.awesomeapi.com.br/json/all';
+
 const getCurrencie = async () => {
-  const url = 'https://economia.awesomeapi.com.br/json/all';
   const response = await fetch(url);
   const currencieResponse = await response.json();
   delete currencieResponse.USDT;
@@ -9,7 +10,6 @@ const getCurrencie = async () => {
 };
 
 export const fetchAll = async () => {
-  const url = 'https://economia.awesomeapi.com.br/json/all';
   const response = await fetch(url);
   const data = await response.json();
   return data;

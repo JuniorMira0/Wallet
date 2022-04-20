@@ -5,7 +5,11 @@ import './Header.css';
 
 class Header extends React.Component {
   render() {
-    const { email } = this.props;
+    const { email, expenses } = this.props;
+    console.log(expenses);
+    const currencyField = expenses.reduce((acc, expense) => (
+      acc + Number(expense.value * expense.exchangeRates[expense.currency].ask)), 0);
+
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
@@ -21,7 +25,7 @@ class Header extends React.Component {
             </li>
             <li className="nav-item active">
               <span className="nav-link" data-testid="total-field">
-                0
+                { currencyField.toFixed(2) }
               </span>
             </li>
             <li className="nav-item active">
@@ -45,4 +49,5 @@ export default connect(mapStateToProps)(Header);
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

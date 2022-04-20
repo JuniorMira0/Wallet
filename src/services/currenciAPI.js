@@ -10,9 +10,13 @@ const getCurrencie = async () => {
 };
 
 export const fetchAll = async () => {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(url);
+    const data2 = await response.json();
+    return data2;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export default getCurrencie;

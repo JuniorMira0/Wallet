@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setGlobalExpanses } from '../actions';
-import fetchAll from '../services/currenciAPI';
+import { fetchAll } from '../services/currenciAPI';
 
 class Inputs extends React.Component {
   constructor() {
@@ -12,10 +12,18 @@ class Inputs extends React.Component {
       id: 0,
       value: '',
       description: '',
-      coin: 'USD',
+      currency: 'USD',
       method: 'Dinheiro',
       tag: 'Alimentação',
+      exchangeRatesAPI: {},
     };
+  }
+
+  async componentDidMount() {
+    const rates = await fetchAll();
+    this.setState({
+      exchangeRatesAPI: rates,
+    });
   }
 
   onChange = (event) => {
@@ -27,26 +35,26 @@ class Inputs extends React.Component {
 
   onClick = async (e) => {
     const { expensesArray } = this.props;
-    const { id, value, description, coin, method, tag } = this.state;
+    const {
+      id, value, description, currency, method, tag, exchangeRatesAPI } = this.state;
     e.preventDefault();
-    const rates = await fetchAll();
-    console.log(rates);
     expensesArray({
       id,
       value,
       description,
-      coin,
+      currency,
       method,
       tag,
-      exchangeRates: rates,
+      exchangeRates: exchangeRatesAPI,
     });
     this.setState({
       id: id + 1,
+      value: '',
     });
   }
 
   render() {
-    const { value, description, coin, method, tag } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     const { currencies } = this.props;
     return (
       <form
@@ -75,13 +83,13 @@ class Inputs extends React.Component {
             onChange={ this.onChange }
           />
         </label>
-        <label htmlFor="coin">
+        <label htmlFor="currency">
           Moeda:
           <select
-            name="coin"
-            id="coin"
+            name="currency"
+            id="currency"
             data-testid="currency-input"
-            value={ coin }
+            value={ currency }
             onChange={ this.onChange }
           >
             {currencies.map((moeda, index) => (

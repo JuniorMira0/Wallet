@@ -14,7 +14,7 @@ const wallet = (state = initialState, action) => {
     return { ...state, expenses: [...state.expenses, action.payload] };
   case REMOVE_LINE:
     return { ...state,
-      expenses: [...state.expenses.filter(({ id }) => id !== action.payload)] };
+      expenses: state.expenses.filter(({ id }) => id !== action.payload) };
   default:
     return state;
   }

@@ -18,7 +18,7 @@ Aqui você vai encontrar detalhes de como iniciar essa aplicação!
 - Instale as dependências:
   - `npm install`
 - Inicialize a aplicação:
-  - `npm start` 
+  - `npm start`  ( porta : http://localhost:3000/)
  
 3.Fazendo login:
  - `email: test@test.com`

@@ -1,7 +1,7 @@
 
 # Boas vindas ao repositório do Wallet
 
-Aqui vocÊ vai encontrar detalhes de como iniciar essa aplicação!
+Aqui você vai encontrar detalhes de como iniciar essa aplicação!
 
 --
 

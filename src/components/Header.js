@@ -13,7 +13,7 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
-          <span className="navbar-brand">Trybe Wallet</span>
+          <span className="navbar-brand">Wallet</span>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item active">
               <span className="nav-link" data-testid="email-field">

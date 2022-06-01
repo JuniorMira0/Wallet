@@ -6,7 +6,6 @@ import './Header.css';
 class Header extends React.Component {
   render() {
     const { email, expenses } = this.props;
-    console.log(expenses);
     const currencyField = expenses.reduce((acc, expense) => (
       acc + Number(expense.value * expense.exchangeRates[expense.currency].ask)), 0);
 

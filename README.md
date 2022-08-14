@@ -36,4 +36,4 @@ Esse projeto foi desenvolvido uma carteira de controle de gastos com conversor d
 
  - [documentação](https://docs.awesomeapi.com.br/api-de-moedas).
 
-
+** Projeto desenvolvido para fins de estudos durante minha formação na Trybe.
